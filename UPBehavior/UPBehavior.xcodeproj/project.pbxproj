@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0749C1F5C7A6A2444E812D76 /* libPods-UPBehavior.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31351B6BB016CEDA0FC4323C /* libPods-UPBehavior.a */; };
+		3EEAC05E1FE244C000CDA511 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC05D1FE244C000CDA511 /* AppDelegate.m */; };
+		3EEAC0611FE244C000CDA511 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0601FE244C000CDA511 /* ViewController.m */; };
+		3EEAC0641FE244C000CDA511 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEAC0621FE244C000CDA511 /* Main.storyboard */; };
+		3EEAC0661FE244C000CDA511 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EEAC0651FE244C000CDA511 /* Assets.xcassets */; };
+		3EEAC0691FE244C000CDA511 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EEAC0671FE244C000CDA511 /* LaunchScreen.storyboard */; };
+		3EEAC06C1FE244C000CDA511 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC06B1FE244C000CDA511 /* main.m */; };
+		3EEAC0761FE2480100CDA511 /* UPBevNodeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0751FE2480100CDA511 /* UPBevNodeControl.m */; };
+		3EEAC0791FE2485E00CDA511 /* UPBevNodeSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0781FE2485E00CDA511 /* UPBevNodeSelector.m */; };
+		3EEAC07C1FE2487100CDA511 /* UPBevNodeSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC07B1FE2487100CDA511 /* UPBevNodeSequence.m */; };
+		3EEAC07F1FE248EF00CDA511 /* UPBevNodeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC07E1FE248EF00CDA511 /* UPBevNodeAction.m */; };
+		3EEAC0821FE2491900CDA511 /* UPBevNodePreCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0811FE2491900CDA511 /* UPBevNodePreCondition.m */; };
+		3EEAC0871FE24E6100CDA511 /* UPBevNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0861FE24E6100CDA511 /* UPBevNode.m */; };
+		3EEAC08D1FE254FD00CDA511 /* UPBlackBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC08C1FE254FD00CDA511 /* UPBlackBoard.m */; };
+		3EEAC09E1FE3BC2D00CDA511 /* UPBevTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC09D1FE3BC2D00CDA511 /* UPBevTask.m */; };
+		3EEAC0A11FE3BD7E00CDA511 /* UPBehaviorTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0A01FE3BD7E00CDA511 /* UPBehaviorTree.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31351B6BB016CEDA0FC4323C /* libPods-UPBehavior.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UPBehavior.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EEAC0591FE244C000CDA511 /* UPBehavior.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UPBehavior.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EEAC05C1FE244C000CDA511 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3EEAC05D1FE244C000CDA511 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3EEAC05F1FE244C000CDA511 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		3EEAC0601FE244C000CDA511 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3EEAC0631FE244C000CDA511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3EEAC0651FE244C000CDA511 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3EEAC0681FE244C000CDA511 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3EEAC06A1FE244C000CDA511 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EEAC06B1FE244C000CDA511 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3EEAC0741FE2480100CDA511 /* UPBevNodeControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevNodeControl.h; sourceTree = "<group>"; };
+		3EEAC0751FE2480100CDA511 /* UPBevNodeControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevNodeControl.m; sourceTree = "<group>"; };
+		3EEAC0771FE2485E00CDA511 /* UPBevNodeSelector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevNodeSelector.h; sourceTree = "<group>"; };
+		3EEAC0781FE2485E00CDA511 /* UPBevNodeSelector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevNodeSelector.m; sourceTree = "<group>"; };
+		3EEAC07A1FE2487100CDA511 /* UPBevNodeSequence.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevNodeSequence.h; sourceTree = "<group>"; };
+		3EEAC07B1FE2487100CDA511 /* UPBevNodeSequence.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevNodeSequence.m; sourceTree = "<group>"; };
+		3EEAC07D1FE248EF00CDA511 /* UPBevNodeAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevNodeAction.h; sourceTree = "<group>"; };
+		3EEAC07E1FE248EF00CDA511 /* UPBevNodeAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevNodeAction.m; sourceTree = "<group>"; };
+		3EEAC0801FE2491900CDA511 /* UPBevNodePreCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevNodePreCondition.h; sourceTree = "<group>"; };
+		3EEAC0811FE2491900CDA511 /* UPBevNodePreCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevNodePreCondition.m; sourceTree = "<group>"; };
+		3EEAC0851FE24E6100CDA511 /* UPBevNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevNode.h; sourceTree = "<group>"; };
+		3EEAC0861FE24E6100CDA511 /* UPBevNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevNode.m; sourceTree = "<group>"; };
+		3EEAC08B1FE254FD00CDA511 /* UPBlackBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBlackBoard.h; sourceTree = "<group>"; };
+		3EEAC08C1FE254FD00CDA511 /* UPBlackBoard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBlackBoard.m; sourceTree = "<group>"; };
+		3EEAC09C1FE3BC2D00CDA511 /* UPBevTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevTask.h; sourceTree = "<group>"; };
+		3EEAC09D1FE3BC2D00CDA511 /* UPBevTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevTask.m; sourceTree = "<group>"; };
+		3EEAC09F1FE3BD7E00CDA511 /* UPBehaviorTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBehaviorTree.h; sourceTree = "<group>"; };
+		3EEAC0A01FE3BD7E00CDA511 /* UPBehaviorTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBehaviorTree.m; sourceTree = "<group>"; };
+		3EEAC0A51FE3C17900CDA511 /* UPMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPMacros.h; sourceTree = "<group>"; };
+		3EEAC0A61FE3C21500CDA511 /* UPBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBehavior.h; sourceTree = "<group>"; };
+		7218C7B9D2E0F6D297EFDF6C /* Pods-UPBehavior.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPBehavior.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UPBehavior/Pods-UPBehavior.debug.xcconfig"; sourceTree = "<group>"; };
+		E30F5CDCD4C2281B15321806 /* Pods-UPBehavior.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPBehavior.release.xcconfig"; path = "Pods/Target Support Files/Pods-UPBehavior/Pods-UPBehavior.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3EEAC0561FE244C000CDA511 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0749C1F5C7A6A2444E812D76 /* libPods-UPBehavior.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F848736BA5AB3DFC46FA74A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				31351B6BB016CEDA0FC4323C /* libPods-UPBehavior.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3EEAC0501FE244C000CDA511 = {
+			isa = PBXGroup;
+			children = (
+				3EEAC05B1FE244C000CDA511 /* UPBehavior */,
+				3EEAC05A1FE244C000CDA511 /* Products */,
+				FA8126A950B9F651AA263EA8 /* Pods */,
+				1F848736BA5AB3DFC46FA74A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3EEAC05A1FE244C000CDA511 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC0591FE244C000CDA511 /* UPBehavior.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3EEAC05B1FE244C000CDA511 /* UPBehavior */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC0731FE2455800CDA511 /* Algorithm */,
+				3EEAC0721FE244EC00CDA511 /* DataStruct */,
+				3EEAC05C1FE244C000CDA511 /* AppDelegate.h */,
+				3EEAC05D1FE244C000CDA511 /* AppDelegate.m */,
+				3EEAC05F1FE244C000CDA511 /* ViewController.h */,
+				3EEAC0601FE244C000CDA511 /* ViewController.m */,
+				3EEAC0621FE244C000CDA511 /* Main.storyboard */,
+				3EEAC0651FE244C000CDA511 /* Assets.xcassets */,
+				3EEAC0671FE244C000CDA511 /* LaunchScreen.storyboard */,
+				3EEAC06A1FE244C000CDA511 /* Info.plist */,
+				3EEAC06B1FE244C000CDA511 /* main.m */,
+				3EEAC0A51FE3C17900CDA511 /* UPMacros.h */,
+				3EEAC0A61FE3C21500CDA511 /* UPBehavior.h */,
+			);
+			path = UPBehavior;
+			sourceTree = "<group>";
+		};
+		3EEAC0721FE244EC00CDA511 /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC0841FE2497000CDA511 /* BlackBoard */,
+				3EEAC0831FE2496100CDA511 /* BehaviorTree */,
+			);
+			path = DataStruct;
+			sourceTree = "<group>";
+		};
+		3EEAC0731FE2455800CDA511 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		3EEAC0831FE2496100CDA511 /* BehaviorTree */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC08A1FE254BF00CDA511 /* PreConditions */,
+				3EEAC0891FE254B000CDA511 /* Actions */,
+				3EEAC0881FE254A200CDA511 /* Controls */,
+				3EEAC0851FE24E6100CDA511 /* UPBevNode.h */,
+				3EEAC0861FE24E6100CDA511 /* UPBevNode.m */,
+				3EEAC09C1FE3BC2D00CDA511 /* UPBevTask.h */,
+				3EEAC09D1FE3BC2D00CDA511 /* UPBevTask.m */,
+				3EEAC09F1FE3BD7E00CDA511 /* UPBehaviorTree.h */,
+				3EEAC0A01FE3BD7E00CDA511 /* UPBehaviorTree.m */,
+			);
+			path = BehaviorTree;
+			sourceTree = "<group>";
+		};
+		3EEAC0841FE2497000CDA511 /* BlackBoard */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC08B1FE254FD00CDA511 /* UPBlackBoard.h */,
+				3EEAC08C1FE254FD00CDA511 /* UPBlackBoard.m */,
+			);
+			path = BlackBoard;
+			sourceTree = "<group>";
+		};
+		3EEAC0881FE254A200CDA511 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC0741FE2480100CDA511 /* UPBevNodeControl.h */,
+				3EEAC0751FE2480100CDA511 /* UPBevNodeControl.m */,
+				3EEAC0771FE2485E00CDA511 /* UPBevNodeSelector.h */,
+				3EEAC0781FE2485E00CDA511 /* UPBevNodeSelector.m */,
+				3EEAC07A1FE2487100CDA511 /* UPBevNodeSequence.h */,
+				3EEAC07B1FE2487100CDA511 /* UPBevNodeSequence.m */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		3EEAC0891FE254B000CDA511 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC07D1FE248EF00CDA511 /* UPBevNodeAction.h */,
+				3EEAC07E1FE248EF00CDA511 /* UPBevNodeAction.m */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		3EEAC08A1FE254BF00CDA511 /* PreConditions */ = {
+			isa = PBXGroup;
+			children = (
+				3EEAC0801FE2491900CDA511 /* UPBevNodePreCondition.h */,
+				3EEAC0811FE2491900CDA511 /* UPBevNodePreCondition.m */,
+			);
+			path = PreConditions;
+			sourceTree = "<group>";
+		};
+		FA8126A950B9F651AA263EA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7218C7B9D2E0F6D297EFDF6C /* Pods-UPBehavior.debug.xcconfig */,
+				E30F5CDCD4C2281B15321806 /* Pods-UPBehavior.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3EEAC0581FE244C000CDA511 /* UPBehavior */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3EEAC06F1FE244C000CDA511 /* Build configuration list for PBXNativeTarget "UPBehavior" */;
+			buildPhases = (
+				A3E8062AD1D93AD8C3ADB4BA /* [CP] Check Pods Manifest.lock */,
+				3EEAC0551FE244C000CDA511 /* Sources */,
+				3EEAC0561FE244C000CDA511 /* Frameworks */,
+				3EEAC0571FE244C000CDA511 /* Resources */,
+				4B51AA6B7960400E64EB1A94 /* [CP] Embed Pods Frameworks */,
+				DDFCDF2D276E8ECD1579CE46 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UPBehavior;
+			productName = UPBehavior;
+			productReference = 3EEAC0591FE244C000CDA511 /* UPBehavior.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EEAC0511FE244C000CDA511 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = UPBev;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = rain;
+				TargetAttributes = {
+					3EEAC0581FE244C000CDA511 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3EEAC0541FE244C000CDA511 /* Build configuration list for PBXProject "UPBehavior" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3EEAC0501FE244C000CDA511;
+			productRefGroup = 3EEAC05A1FE244C000CDA511 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3EEAC0581FE244C000CDA511 /* UPBehavior */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3EEAC0571FE244C000CDA511 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EEAC0691FE244C000CDA511 /* LaunchScreen.storyboard in Resources */,
+				3EEAC0661FE244C000CDA511 /* Assets.xcassets in Resources */,
+				3EEAC0641FE244C000CDA511 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B51AA6B7960400E64EB1A94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UPBehavior/Pods-UPBehavior-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3E8062AD1D93AD8C3ADB4BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UPBehavior-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DDFCDF2D276E8ECD1579CE46 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-UPBehavior/Pods-UPBehavior-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3EEAC0551FE244C000CDA511 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3EEAC0821FE2491900CDA511 /* UPBevNodePreCondition.m in Sources */,
+				3EEAC0611FE244C000CDA511 /* ViewController.m in Sources */,
+				3EEAC07F1FE248EF00CDA511 /* UPBevNodeAction.m in Sources */,
+				3EEAC07C1FE2487100CDA511 /* UPBevNodeSequence.m in Sources */,
+				3EEAC09E1FE3BC2D00CDA511 /* UPBevTask.m in Sources */,
+				3EEAC06C1FE244C000CDA511 /* main.m in Sources */,
+				3EEAC08D1FE254FD00CDA511 /* UPBlackBoard.m in Sources */,
+				3EEAC0761FE2480100CDA511 /* UPBevNodeControl.m in Sources */,
+				3EEAC0A11FE3BD7E00CDA511 /* UPBehaviorTree.m in Sources */,
+				3EEAC05E1FE244C000CDA511 /* AppDelegate.m in Sources */,
+				3EEAC0871FE24E6100CDA511 /* UPBevNode.m in Sources */,
+				3EEAC0791FE2485E00CDA511 /* UPBevNodeSelector.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3EEAC0621FE244C000CDA511 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EEAC0631FE244C000CDA511 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3EEAC0671FE244C000CDA511 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3EEAC0681FE244C000CDA511 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3EEAC06D1FE244C000CDA511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3EEAC06E1FE244C000CDA511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3EEAC0701FE244C000CDA511 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7218C7B9D2E0F6D297EFDF6C /* Pods-UPBehavior.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8G584SC7P2;
+				INFOPLIST_FILE = UPBehavior/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rain.com.UPBehavior;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3EEAC0711FE244C000CDA511 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E30F5CDCD4C2281B15321806 /* Pods-UPBehavior.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8G584SC7P2;
+				INFOPLIST_FILE = UPBehavior/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = rain.com.UPBehavior;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3EEAC0541FE244C000CDA511 /* Build configuration list for PBXProject "UPBehavior" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EEAC06D1FE244C000CDA511 /* Debug */,
+				3EEAC06E1FE244C000CDA511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3EEAC06F1FE244C000CDA511 /* Build configuration list for PBXNativeTarget "UPBehavior" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3EEAC0701FE244C000CDA511 /* Debug */,
+				3EEAC0711FE244C000CDA511 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EEAC0511FE244C000CDA511 /* Project object */;
+}
