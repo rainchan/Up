@@ -14,7 +14,7 @@
 /**
  root node
  */
-@property (nonatomic, readonly) UPBevNode *root;
+@property (nonatomic,strong, readonly) UPBevNode *root;
 
 /**
  init Behavior Tree

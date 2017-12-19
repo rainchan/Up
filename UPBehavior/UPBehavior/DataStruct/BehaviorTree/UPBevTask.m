@@ -9,5 +9,14 @@
 #import "UPBevTask.h"
 
 @implementation UPBevTask
-
+-(instancetype)init
+{
+    self = [super init];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
 @end

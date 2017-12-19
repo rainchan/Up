@@ -11,15 +11,28 @@
 
 @implementation UPBevNodePreCondition
 
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"inputValueDic" : [NSString class]};
+}
+
 -(BOOL)isTrue
 {
     if (!self.inputValueDic) {
         return YES;
     }
     
-
     
-    return YES;
+    return NO;
 }
 
 @end

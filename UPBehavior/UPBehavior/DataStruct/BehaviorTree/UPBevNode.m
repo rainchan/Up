@@ -10,25 +10,23 @@
 
 @implementation UPBevNode
 
++ (NSArray *)modelPropertyBlacklist {
+    return @[@"parent"];
+}
+
 -(instancetype)init
 {
     self = [super init];
     
     if (self) {
-        self.childrenNode = [NSMutableArray new];
+        self.children = [NSMutableArray new];
     }
     
     return self;
 }
 
--(void)addChild:(UPBevNode*)node
-{
-    node.parentNode = self;
-    [self.childrenNode addObject:node];
-}
-
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"childrenNode" : [UPBevNode class]};
+    return @{@"children" : [UPBevNode class]};
 
 }
 @end

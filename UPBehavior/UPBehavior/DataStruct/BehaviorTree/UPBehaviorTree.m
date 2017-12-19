@@ -10,6 +10,16 @@
 
 @implementation UPBehaviorTree
 
+-(instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
 -(instancetype)initWithRootNode:(UPBevNode*) node
 {
     self = [super init];

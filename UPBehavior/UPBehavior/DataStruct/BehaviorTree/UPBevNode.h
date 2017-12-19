@@ -9,17 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "UPBevNodePreCondition.h"
 #import "UPBevTask.h"
+#import "RWTreeNode.h"
 
-@interface UPBevNode : NSObject
+@interface UPBevNode : RWTreeNodeObject
 
 @property (nonatomic, copy) NSString *bevName;
 
 @property (nonatomic, strong) UPBevTask *task;
-@property (nonatomic, strong) UPBevNode *parentNode;
-@property (nonatomic, strong) NSMutableArray *childrenNode;
 @property (nonatomic, strong) UPBevNodePreCondition *preCondition;
 
-//-(instancetype)initWithParent:(UPBevNode *)node;
-
--(void)addChild:(UPBevNode*)node;
 @end
