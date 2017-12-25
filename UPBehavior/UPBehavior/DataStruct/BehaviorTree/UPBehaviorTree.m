@@ -7,6 +7,7 @@
 //
 
 #import "UPBehaviorTree.h"
+#import "YYModel.h"
 
 @implementation UPBehaviorTree
 
@@ -20,15 +21,26 @@
     return self;
 }
 
--(instancetype)initWithRootNode:(UPBevNode*) node
+-(instancetype)initWithJson:(NSString*)json;
 {
     self = [super init];
     
     if (self) {
-        _root = node;
+        _root = [self rootNodeWithJson:json];
     }
     
     return self;
+}
+
+-(UPBevNode*)rootNodeWithJson:(NSString *)json
+{
+    if (!json || json.length == 0) {
+        return [UPBevNode new];
+    }
+    
+    //to do
+    UPBevNode *rootNode = [UPBevNode yy_modelWithJSON:json];
+    return rootNode;
 }
 
 @end

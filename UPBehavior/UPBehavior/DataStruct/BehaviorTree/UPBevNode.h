@@ -11,6 +11,14 @@
 #import "UPBevTask.h"
 #import "RWTreeNode.h"
 
+typedef void (^UPBevNodeProtocolTraverseBlock)(id<RWTreeNodeProtocol> currentNode, NSString* indexPath, BOOL* stop);
+
+@protocol UPBevNodeProtocol<NSObject>
+
+
+
+@end
+
 @interface UPBevNode : RWTreeNodeObject
 
 @property (nonatomic, copy) NSString *bevName;

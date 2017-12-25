@@ -24,6 +24,7 @@
 		3EEAC08D1FE254FD00CDA511 /* UPBlackBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC08C1FE254FD00CDA511 /* UPBlackBoard.m */; };
 		3EEAC09E1FE3BC2D00CDA511 /* UPBevTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC09D1FE3BC2D00CDA511 /* UPBevTask.m */; };
 		3EEAC0A11FE3BD7E00CDA511 /* UPBehaviorTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEAC0A01FE3BD7E00CDA511 /* UPBehaviorTree.m */; };
+		3EF1E8F51FF09E32000E2C6C /* UPBevDeviceTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EF1E8F41FF09E32000E2C6C /* UPBevDeviceTree.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,9 @@
 		3EEAC0A01FE3BD7E00CDA511 /* UPBehaviorTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBehaviorTree.m; sourceTree = "<group>"; };
 		3EEAC0A51FE3C17900CDA511 /* UPMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPMacros.h; sourceTree = "<group>"; };
 		3EEAC0A61FE3C21500CDA511 /* UPBehavior.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBehavior.h; sourceTree = "<group>"; };
+		3EF1E8F31FF09E32000E2C6C /* UPBevDeviceTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPBevDeviceTree.h; sourceTree = "<group>"; };
+		3EF1E8F41FF09E32000E2C6C /* UPBevDeviceTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UPBevDeviceTree.m; sourceTree = "<group>"; };
+		3EF1E8F61FF0A6B8000E2C6C /* RWTreeNodeProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTreeNodeProtocol.h; sourceTree = "<group>"; };
 		7218C7B9D2E0F6D297EFDF6C /* Pods-UPBehavior.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPBehavior.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UPBehavior/Pods-UPBehavior.debug.xcconfig"; sourceTree = "<group>"; };
 		E30F5CDCD4C2281B15321806 /* Pods-UPBehavior.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UPBehavior.release.xcconfig"; path = "Pods/Target Support Files/Pods-UPBehavior/Pods-UPBehavior.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,7 @@
 		3EEAC05B1FE244C000CDA511 /* UPBehavior */ = {
 			isa = PBXGroup;
 			children = (
+				3EF1E8F21FF09E07000E2C6C /* UPDeviceTest */,
 				3EEAC0731FE2455800CDA511 /* Algorithm */,
 				3EEAC0721FE244EC00CDA511 /* DataStruct */,
 				3EEAC05C1FE244C000CDA511 /* AppDelegate.h */,
@@ -141,6 +146,7 @@
 		3EEAC0831FE2496100CDA511 /* BehaviorTree */ = {
 			isa = PBXGroup;
 			children = (
+				3EF1E8F61FF0A6B8000E2C6C /* RWTreeNodeProtocol.h */,
 				3E45AACA1FE8B71B00824C84 /* RWTreeNode.h */,
 				3E45AAC91FE8B71B00824C84 /* RWTreeNode.m */,
 				3EEAC08A1FE254BF00CDA511 /* PreConditions */,
@@ -194,6 +200,15 @@
 				3EEAC0811FE2491900CDA511 /* UPBevNodePreCondition.m */,
 			);
 			path = PreConditions;
+			sourceTree = "<group>";
+		};
+		3EF1E8F21FF09E07000E2C6C /* UPDeviceTest */ = {
+			isa = PBXGroup;
+			children = (
+				3EF1E8F31FF09E32000E2C6C /* UPBevDeviceTree.h */,
+				3EF1E8F41FF09E32000E2C6C /* UPBevDeviceTree.m */,
+			);
+			path = UPDeviceTest;
 			sourceTree = "<group>";
 		};
 		FA8126A950B9F651AA263EA8 /* Pods */ = {
@@ -335,6 +350,7 @@
 				3EEAC0611FE244C000CDA511 /* ViewController.m in Sources */,
 				3EEAC07F1FE248EF00CDA511 /* UPBevNodeAction.m in Sources */,
 				3EEAC07C1FE2487100CDA511 /* UPBevNodeSequence.m in Sources */,
+				3EF1E8F51FF09E32000E2C6C /* UPBevDeviceTree.m in Sources */,
 				3E45AACB1FE8B71B00824C84 /* RWTreeNode.m in Sources */,
 				3EEAC09E1FE3BC2D00CDA511 /* UPBevTask.m in Sources */,
 				3EEAC06C1FE244C000CDA511 /* main.m in Sources */,

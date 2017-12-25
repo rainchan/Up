@@ -10,8 +10,11 @@
 
 @interface UPBlackBoard : NSObject
 
-+ (UPBlackBoard *)shareInstance;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, strong) NSMutableDictionary *configBoard;
+@property (nonatomic, strong) NSMutableDictionary *runtimeBoard;
 
--(id)objectForKey:(NSString *)keyPath;
+
++ (UPBlackBoard *)shareInstance;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "RWTreeNode.h"
 
-@implementation NSIndexPath(RWTreeNode)
+@implementation NSIndexPath(RWTreeNodeProtocol)
 - (NSUInteger) lastIndex
 {
     if (self.length == 0) {
@@ -21,14 +21,14 @@
 @implementation RWTreeNodeObject
 {
     NSMutableArray*         _children;
-    __weak id<RWTreeNode>   _parent;
+    __weak id<RWTreeNodeProtocol>   _parent;
 }
 
 @synthesize children;
 @synthesize parent = _parent;
 @synthesize value = _value;
 
-+ (id<RWTreeNode>) treeNode
++ (id<RWTreeNodeProtocol>) treeNode
 {
     return [[[self class] alloc] init];
 }
@@ -40,7 +40,7 @@
     return self;
 }
 
-- (NSMutableArray< id<RWTreeNode> >*) children
+- (NSMutableArray< id<RWTreeNodeProtocol> >*) children
 {
     if (_children == nil) {
         _children = @[].mutableCopy;
@@ -48,9 +48,9 @@
     return _children;
 }
 
-- (id<RWTreeNode>) root
+- (id<RWTreeNodeProtocol>) root
 {
-    id<RWTreeNode> current = self;
+    id<RWTreeNodeProtocol> current = self;
     while(current.parent) current = current.parent;
     return current;
 }
@@ -67,26 +67,26 @@
 
 #pragma mark - Tree node operation and access methods
 
-- (void) addChild:(id<RWTreeNode>)child
+- (void) addChild:(id<RWTreeNodeProtocol>)child
 {
     [[self children] addObject:child];
     child.parent = self;
 }
 
-- (void) removeChild:(id<RWTreeNode>)child
+- (void) removeChild:(id<RWTreeNodeProtocol>)child
 {
     [self.children removeObject:child];
     child.parent = nil;
 }
 
-- (id<RWTreeNode>) childAtIndex:(NSUInteger) index
+- (id<RWTreeNodeProtocol>) childAtIndex:(NSUInteger) index
 {
     if (index < self.children.count)
         return self.children[index];
     return nil;
 }
 
-- (void) insertChild:(id<RWTreeNode>)child atIndex:(NSUInteger) index
+- (void) insertChild:(id<RWTreeNodeProtocol>)child atIndex:(NSUInteger) index
 {
     if (index < self.children.count)
         [self.children insertObject:child atIndex:index];
@@ -99,9 +99,9 @@
     [self.children removeObjectAtIndex:index];
 }
 
--(id<RWTreeNode>) childAtIndexPath:(NSIndexPath*) indexPath
+-(id<RWTreeNodeProtocol>) childAtIndexPath:(NSIndexPath*) indexPath
 {
-    id<RWTreeNode> current = self;
+    id<RWTreeNodeProtocol> current = self;
     for(NSUInteger i = 0; i < indexPath.length; i++){
         NSAssert(![current isLeaf], @"Not leaf");
         current = current.children[[indexPath indexAtPosition:i]];
@@ -109,9 +109,9 @@
     return current;
 }
 
--(void) insertChild:(id<RWTreeNode>)child atIndexPath:(NSIndexPath*) indexPath
+-(void) insertChild:(id<RWTreeNodeProtocol>)child atIndexPath:(NSIndexPath*) indexPath
 {
-    id<RWTreeNode> current = self;
+    id<RWTreeNodeProtocol> current = self;
     for(NSUInteger i = 0; i < indexPath.length - 1; i++){
         NSAssert(![current isLeaf], @"Not leaf");
         current = current.children[[indexPath indexAtPosition:i]];
@@ -121,7 +121,7 @@
 
 -(void) removeChildAtIndexPath:(NSIndexPath*) indexPath
 {
-    id<RWTreeNode> current = self;
+    id<RWTreeNodeProtocol> current = self;
     for(NSUInteger i = 0; i < indexPath.length - 1; i++){
         NSAssert(![current isLeaf], @"Not leaf");
         current = current.children[[indexPath indexAtPosition:i]];
@@ -141,10 +141,10 @@
     return [self _indexPathBasedOn:self.root];
 }
 
-- (NSIndexPath*) indexPathBasedOn:(id<RWTreeNode>)node
+- (NSIndexPath*) indexPathBasedOn:(id<RWTreeNodeProtocol>)node
 {
-    __block id<RWTreeNode> foundNode = nil;
-    [self.children enumerateObjectsUsingBlock:^(id<RWTreeNode>  _Nonnull theNode, NSUInteger idx, BOOL * _Nonnull stop) {
+    __block id<RWTreeNodeProtocol> foundNode = nil;
+    [self.children enumerateObjectsUsingBlock:^(id<RWTreeNodeProtocol>  _Nonnull theNode, NSUInteger idx, BOOL * _Nonnull stop) {
         if (node == theNode){
             foundNode = theNode;
             *stop = YES;
@@ -158,11 +158,11 @@
     return nil;
 }
 
-- (NSIndexPath*) _indexPathBasedOn:(id<RWTreeNode>)node
+- (NSIndexPath*) _indexPathBasedOn:(id<RWTreeNodeProtocol>)node
 {
-    NSMutableArray<id<RWTreeNode>>* treeNodes = [@[] mutableCopy];
+    NSMutableArray<id<RWTreeNodeProtocol>>* treeNodes = [@[] mutableCopy];
     NSIndexPath* indexPath = [NSIndexPath new];
-    [self backTraceToRootWithBlock:^(id<RWTreeNode> currentNode, BOOL *stop) {
+    [self backTraceToRootWithBlock:^(id<RWTreeNodeProtocol> currentNode, BOOL *stop) {
         if (node == currentNode){
             *stop = YES;
         }else{
@@ -178,24 +178,24 @@
 
 #pragma mark - Traverse utils
 
-- (void) dfsWithBlock:(RWTreeNodeTraverseBlock) block
+- (void) dfsWithBlock:(RWTreeNodeProtocolTraverseBlock) block
 {
     [self _dfsWithBlock:block indexPath:[NSIndexPath new]];
 }
 
-- (void) bfsWithBlock:(RWTreeNodeTraverseBlock) block
+- (void) bfsWithBlock:(RWTreeNodeProtocolTraverseBlock) block
 {
-    [[self flatten] enumerateObjectsUsingBlock:^(id<RWTreeNode>  node, NSUInteger idx, BOOL *  stop) {
+    [[self flatten] enumerateObjectsUsingBlock:^(id<RWTreeNodeProtocol>  node, NSUInteger idx, BOOL *  stop) {
         if (block) {
             block(node,[node indexPath],stop);
         }
     }];
 }
 
-- (void) backTraceToRootWithBlock:(RWTreeNodeBackTraceBlock) block
+- (void) backTraceToRootWithBlock:(RWTreeNodeProtocolBackTraceBlock) block
 {
     BOOL stop = NO;
-    id<RWTreeNode> current = self;
+    id<RWTreeNodeProtocol> current = self;
     //NSIndexPath* indexPath = [current indexPath];
     while(current && !stop) {
         if (block)
@@ -205,14 +205,14 @@
     }
 }
 
-- (NSArray<id<RWTreeNode>>*) flatten
+- (NSArray<id<RWTreeNodeProtocol>>*) flatten
 {
     NSMutableArray* array = @[].mutableCopy;
     NSMutableArray* queue = @[].mutableCopy;
     [queue addObject:self];
     [array addObject:self];
     while (queue.count) {
-        id<RWTreeNode> node = queue.firstObject;
+        id<RWTreeNodeProtocol> node = queue.firstObject;
         [queue removeObjectAtIndex:0];
         [array addObjectsFromArray:[node children]];
         [queue addObjectsFromArray:[node children]];
@@ -220,7 +220,7 @@
     return array.copy;
 }
 
-- (NSArray<id<RWTreeNode>>*) brothers
+- (NSArray<id<RWTreeNodeProtocol>>*) brothers
 {
     NSMutableArray* brothers = [[[self parent] children] mutableCopy];
     [brothers removeObjectIdenticalTo:self];
@@ -230,13 +230,13 @@
 
 
 #pragma mark - Internal methods
-- (BOOL) _dfsWithBlock:(RWTreeNodeTraverseBlock) block indexPath:(NSIndexPath*)indexPath
+- (BOOL) _dfsWithBlock:(RWTreeNodeProtocolTraverseBlock) block indexPath:(NSIndexPath*)indexPath
 {
     __block BOOL retStop = NO;
     block(self, indexPath, &retStop);
     if (retStop) return YES;
     
-    [self.children enumerateObjectsUsingBlock:^(id<RWTreeNode>  _Nonnull node, NSUInteger idx, BOOL * _Nonnull stop) {
+    [self.children enumerateObjectsUsingBlock:^(id<RWTreeNodeProtocol>  _Nonnull node, NSUInteger idx, BOOL * _Nonnull stop) {
         *stop = [(RWTreeNodeObject*)node _dfsWithBlock:block indexPath:[indexPath indexPathByAddingIndex:idx]];
         if(*stop) retStop = YES;
     }];
@@ -253,7 +253,7 @@
 - (NSString* ) dump
 {
     NSMutableString* returnString = [NSMutableString string];
-    [self dfsWithBlock:^(id<RWTreeNode> currentNode, NSIndexPath *indexPath, BOOL *stop) {
+    [self dfsWithBlock:^(id<RWTreeNodeProtocol> currentNode, NSIndexPath *indexPath, BOOL *stop) {
         for (int i = 0; i < indexPath.length; i++) {
             [returnString appendString:@"    "];
         }

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "UPBehavior.h"
+#import "UPBevDeviceTree.h"
 
 #import "YYModel.h"
 #import "UPMacros.h"
@@ -89,16 +90,18 @@
     [child_2 addChild:child_2_1];
 
     __weak typeof(self)weakSelf = self;
-    [rootNode dfsWithBlock:^(id<RWTreeNode> currentNode, NSIndexPath *indexPath, BOOL *stop) {
+    [rootNode dfsWithBlock:^(id<RWTreeNodeProtocol> currentNode, NSIndexPath *indexPath, BOOL *stop) {
         
         UPBevNode * bevNode = currentNode;
         NSString *logStr = [weakSelf.resultView.text stringByAppendingString:[NSString stringWithFormat:@"\n------>DFS Current %@ IndexPath %@",bevNode.bevName, indexPath]];
+        
         weakSelf.resultView.text = logStr;
         
         if ([bevNode.bevName isEqualToString:inputTxt]) {
             *stop = YES;
             weakSelf.resultNode = bevNode;
             logStr = [weakSelf.resultView.text stringByAppendingString:[NSString stringWithFormat:@"\n------->DFS Find result %@", bevNode.bevName]];
+            
             weakSelf.resultView.text = logStr;
         }
         
@@ -109,6 +112,25 @@
         logStr = [self.resultView.text stringByAppendingString:[NSString stringWithFormat:@" \npreCondition is %d",isCondition]];
         self.resultView.text = logStr;
     }
+    
+    [self createBlackBoard];
+}
+
+- (id)objectInArray:(id)array atIndexPath:(NSIndexPath *)path {
+    
+    // the end of recursion
+    if (![array isKindOfClass:[NSArray self]] || !path.length) return array;
+    
+    NSUInteger nextIndex = [path indexAtPosition:0];
+    
+    // this will (purposely) raise an exception if the nextIndex is out of bounds
+    id nextArray = [array objectAtIndex:nextIndex];
+    
+    NSUInteger indexes[27]; // maximum number of dimensions per string theory :)
+    [path getIndexes:indexes];
+    NSIndexPath *nextPath = [NSIndexPath indexPathWithIndexes:indexes+1 length:path.length-1];
+    
+    return [self objectInArray:nextArray atIndexPath:nextPath];
 }
 
 -(BOOL)checkPreCondition:(UPBevNode*)node condition:(BOOL)isTrue
@@ -122,10 +144,53 @@
     return [self checkPreCondition:node.parent condition:isTrue];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+-(void)createBlackBoard
+{
+    NSString *dicJsontr = @"{\"functionData\":{\"unit01\":{\"programme\":{\"current\":\"current Programme\",\"list\":[]}}}}";
 
+    NSDictionary *blackboard = [self dictionaryWithJsonString:dicJsontr];
+    
+//    NSMutableDictionary *blackboard = [NSMutableDictionary new];
+//    NSMutableDictionary *functionData = [NSMutableDictionary new];
+//    NSMutableDictionary *unit01 = [NSMutableDictionary new];
+//    NSMutableDictionary *programme = [NSMutableDictionary new];
+//    NSMutableArray *programmeList = [NSMutableArray new];
+//
+//    [blackboard setObject:functionData forKey:@"functionData"];
+//    [functionData setObject:unit01 forKey:@"unit01"];
+//    [unit01 setObject:programme forKey:@"programme"];
+//    [programme setObject:programmeList forKey:@"list"];
+//    [unit01 setValue:@"current Programme" forKeyPath:@"programme.current"];
+//
+//    NSString *jsonStr = [blackboard yy_modelToJSONString];
+    
+    NSString *current = [blackboard valueForKeyPath:@"functionData.unit01.programme.current"];
+    NSLog(@"current is %@", current);
 }
 
+-(void)deviceTreeSearch
+{
+    UPBevDeviceTree *tree = [UPBevDeviceTree new];
+    [tree searchNodeName:@"washing" taskValue:@"true"];
+}
 
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    
+    if (jsonString == nil) {
+        return nil;
+    }
+    
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
+                                                        options:NSJSONReadingMutableContainers
+                                                          error:&err];
+    
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    
+    return dic;
+}
 @end

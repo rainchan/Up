@@ -9,6 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "UPBevNode.h"
 
+@protocol UPBehaviorTreeProtocol<NSObject>
+
+@required
+
+/**
+ 搜索树节点，并传入树形节点执行任务所需要的值对象 value
+
+ @param name  节点名称
+ @param value 任务入参值
+ @return 行为树节点
+ */
+-(UPBevNode*)searchNodeName:(NSString *)name taskValue:(id)value;
+
+@end
+
 @interface UPBehaviorTree : NSObject
 
 /**
@@ -16,12 +31,14 @@
  */
 @property (nonatomic,strong, readonly) UPBevNode *root;
 
-/**
- init Behavior Tree
 
- @param node root node
- @return Behavior tree
+/**
+ 根据 json 文件生成行为树
+
+ @param json  json 字符串
+ @return 行为树
  */
--(instancetype)initWithRootNode:(UPBevNode*) node;
+-(instancetype)initWithJson:(NSString*)json;
+
 
 @end

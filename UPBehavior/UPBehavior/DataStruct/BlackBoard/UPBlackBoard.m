@@ -22,10 +22,4 @@
     return sharedInstance;
 }
 
-
--(id)objectForKey:(NSString *)keyPath
-{
-    return @1;
-}
-
 @end

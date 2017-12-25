@@ -10,10 +10,6 @@
 
 @implementation UPBevNode
 
-+ (NSArray *)modelPropertyBlacklist {
-    return @[@"parent"];
-}
-
 -(instancetype)init
 {
     self = [super init];
@@ -23,6 +19,10 @@
     }
     
     return self;
+}
+
++ (NSArray *)modelPropertyBlacklist {
+    return @[@"parent"];
 }
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
